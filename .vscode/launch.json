@@ -1,0 +1,55 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+	  {
+		"name": "Android Phone",
+		"request": "launch",
+		"type": "dart",
+		"deviceId": "emulator-5554"
+	  },
+	  {
+		"name": "Apple MacOs",
+		"request": "launch",
+		"type": "dart",
+		"deviceId": "macOS"
+	  },
+	  {
+		"name": "Apple iPhone",
+		"request": "launch",
+		"type": "dart",
+		"deviceId": "iPhone 11"
+	  },
+	  {
+		"name": "Web",
+		"request": "launch",
+		"type": "dart",
+		"deviceId": "chrome"
+	  }
+	],
+	"compounds": [
+	  {
+		"name": "All Apple",
+		"configurations": ["Apple MacOs", "Apple iPhone"]
+	  },
+	  {
+		"name": "All Android",
+		"configurations": ["Android Phone"]
+	  },
+	  {
+		"name": "All Platforms",
+		"configurations": [
+		  "Apple MacOs",
+		  "Apple iPhone",
+		  "Android Phone",
+		  "Web"
+		]
+	  },
+	  {
+		"name": "Web/iPhone",
+		"configurations": [
+		  "Apple iPhone",
+		  "Web"
+		]
+	  }
+	]
+  }
