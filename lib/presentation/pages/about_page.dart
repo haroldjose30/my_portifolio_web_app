@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'dart:math';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
@@ -19,68 +18,57 @@ My professional objective is to continue growing and specializing in mobile tech
     const String aboutText3 = """
 I enjoy creating innovative solutions using mobile and web technologies. I like to keep learning, helping people and making a difference wherever I go!
 """;
-
-    return Container(
-      color: Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          children: [
-            const _DefaultText(text: aboutText1),
-            const _DefaultText(text: aboutText2),
-            const _DefaultText(text: aboutText3),
-            Row(
-              children: [
-                const Spacer(),
-                IconButton(
-                  icon: const FaIcon(FontAwesomeIcons.linkedin),
-                  onPressed: onLinkedinPressed,
-                ),
-                const Spacer(),
-                IconButton(
-                  icon: const FaIcon(FontAwesomeIcons.github),
-                  onPressed: onGithubPressed,
-                ),
-                const Spacer(),
-                IconButton(
-                  icon: const FaIcon(FontAwesomeIcons.twitter),
-                  onPressed: onTwitterPressed,
-                ),
-                const Spacer(),
-              ],
-            ),
-            const Spacer(),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(70), // Image border
-              child: SizedBox.fromSize(
-                size: Size.fromRadius(150), // Image radius
-                child: Image.asset(getRandonImage(), fit: BoxFit.cover),
+    return DefaultTextStyle(
+      style: Theme.of(context).textTheme.bodyText2!,
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints viewportConstraints) {
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: viewportConstraints.maxHeight,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  const _DefaultText(text: aboutText1),
+                  const _DefaultText(text: aboutText2),
+                  const _DefaultText(text: aboutText3),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(16), // Image border
+                    child: SizedBox.fromSize(
+                      size: const Size.fromRadius(200), // Image radius
+                      child: Image.asset(
+                        'assets/images/harold_augusto1.jpeg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      const Spacer(),
+                      IconButton(
+                        icon: const FaIcon(FontAwesomeIcons.linkedin),
+                        onPressed: onLinkedinPressed,
+                      ),
+                      IconButton(
+                        icon: const FaIcon(FontAwesomeIcons.github),
+                        onPressed: onGithubPressed,
+                      ),
+                      IconButton(
+                        icon: const FaIcon(FontAwesomeIcons.twitter),
+                        onPressed: onTwitterPressed,
+                      ),
+                      const Spacer(),
+                    ],
+                  ),
+                ],
               ),
             ),
-            const Spacer(),
-          ],
-        ),
+          );
+        },
       ),
     );
-  }
-
-  String getRandonImage() {
-    Random random = Random();
-    int randomNumber = random.nextInt(4);
-    switch (randomNumber) {
-      case 0:
-        return 'assets/images/harold_augusto1.jpeg';
-      case 1:
-        return 'assets/images/harold_augusto2.jpeg';
-      case 2:
-        return 'assets/images/harold_augusto3.jpeg';
-      case 3:
-        return 'assets/images/harold_family1.png';
-      case 4:
-        return 'assets/images/harold_family2.jpeg';
-      default:
-        return 'assets/images/harold_augusto1.jpeg';
-    }
   }
 
   void onLinkedinPressed() {

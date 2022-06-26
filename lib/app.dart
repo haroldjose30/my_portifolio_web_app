@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_portifolio_web_app/presentation/pages/old/home_page_old.dart';
 
 import 'presentation/pages/home_page.dart';
+import 'presentation/pages/router/router_generator.dart';
+import 'presentation/pages/router/routes.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -9,6 +12,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: true,
       title: 'Harold Professional Profile',
       theme: ThemeData(
         // This is the theme of your application.
@@ -21,8 +25,15 @@ class App extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomePage(),
+      //builder: (_, child) => HomePage(
+      //  child: child ?? const Text("Loading..."),
+      //),
+      //initialRoute: routeHome,
+      //navigatorKey: navKey,
+      //onGenerateRoute: RouteGenerator.generateRoute,
+      home: HomePageOld(),
     );
   }
 }
