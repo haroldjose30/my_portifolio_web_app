@@ -24,7 +24,7 @@ class _HomePageSideMenuState extends State<HomePageSideMenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(getTitle(_activePageIndex)),
+        title: Text("Harold Professional Profile"),
         centerTitle: true,
       ),
       body: Row(
@@ -66,24 +66,5 @@ class _HomePageSideMenuState extends State<HomePageSideMenu> {
     setState(() {
       _activePageIndex = page;
     });
-  }
-
-  String getTitle(int pageIndex) {
-    switch (pageIndex) {
-      case 0:
-        return "About Me";
-      case 1:
-        return "Projects and Portfolios";
-      case 2:
-        return "Skills";
-      case 3:
-        return "Professional Experience";
-      case 4:
-        return "Education";
-      case 5:
-        return "Get in Touch";
-      default:
-        return "Professional Profile";
-    }
   }
 }
