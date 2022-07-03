@@ -4,7 +4,10 @@ import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'side_menu_style.dart';
 
 class SideMenuPage extends StatelessWidget {
-  const SideMenuPage({required this.page, Key? key}) : super(key: key);
+  const SideMenuPage({
+    required this.page,
+    Key? key,
+  }) : super(key: key);
   final PageController page;
 
   @override
