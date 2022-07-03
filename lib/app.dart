@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portifolio_web_app/presentation/pages/old/home_page_old.dart';
 
 import 'presentation/pages/home_page.dart';
 import 'presentation/pages/router/router_generator.dart';
@@ -27,13 +26,13 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      //builder: (_, child) => HomePage(
-      //  child: child ?? const Text("Loading..."),
-      //),
-      //initialRoute: routeHome,
-      //navigatorKey: navKey,
-      //onGenerateRoute: RouteGenerator.generateRoute,
-      home: HomePageOld(),
+      builder: (_, child) => HomePage(
+        child: child ?? const Text("Some went wrong, refresh page!"),
+      ),
+      initialRoute: routeHome,
+      navigatorKey: navKey,
+      onGenerateRoute: RouteGenerator.generateRoute,
+      //home: HomePageSideMenu(),
     );
   }
 }

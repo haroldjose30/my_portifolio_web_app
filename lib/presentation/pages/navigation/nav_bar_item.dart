@@ -5,13 +5,13 @@ import '../router/routes.dart';
 class NavBarItem extends StatefulWidget {
   final String text;
   final String route;
-  final Icon image;
+  final Icon? image;
 
   const NavBarItem({
     Key? key,
     required this.text,
     required this.route,
-    required this.image,
+    this.image,
   }) : super(key: key);
 
   @override
@@ -35,7 +35,7 @@ class _NavBarItemState extends State<NavBarItem> {
         });
       },
       child: Material(
-        color: Colors.transparent,
+        color: Colors.grey.withOpacity(0.2),
         child: InkWell(
           splashColor: Colors.white60,
           onTap: onTap,
@@ -45,15 +45,11 @@ class _NavBarItemState extends State<NavBarItem> {
             margin: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: widget.image,
-                ),
                 Text(
                   widget.text,
                   style: TextStyle(
                     fontSize: 16.0,
-                    color: hoover ? Colors.deepOrange : Colors.black,
+                    color: hoover ? Colors.blueAccent : Colors.black,
                   ),
                 ),
               ],

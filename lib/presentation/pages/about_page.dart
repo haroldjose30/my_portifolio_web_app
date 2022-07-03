@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portifolio_web_app/presentation/widgets/page_template_central.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../widgets/text_body.dart';
+import '../widgets/text_section_title.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({Key? key}) : super(key: key);
@@ -18,55 +22,49 @@ My professional objective is to continue growing and specializing in mobile tech
     const String aboutText3 = """
 I enjoy creating innovative solutions using mobile and web technologies. I like to keep learning, helping people and making a difference wherever I go!
 """;
-    return DefaultTextStyle(
-      style: Theme.of(context).textTheme.bodyText2!,
-      child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints viewportConstraints) {
-          return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: viewportConstraints.maxHeight,
+    return PageTemplateCentral(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const TextSectionTitle("About Me"),
+          const TextBody(aboutText1),
+          const TextBody(aboutText2),
+          const TextBody(aboutText3),
+          Row(
+            children: [
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: IconButton(
+                  icon: const FaIcon(FontAwesomeIcons.linkedin),
+                  onPressed: onLinkedinPressed,
+                ),
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  const _DefaultText(text: aboutText1),
-                  const _DefaultText(text: aboutText2),
-                  const _DefaultText(text: aboutText3),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16), // Image border
-                    child: SizedBox.fromSize(
-                      size: const Size.fromRadius(200), // Image radius
-                      child: Image.asset(
-                        'assets/images/harold_augusto1.jpeg',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Spacer(),
-                      IconButton(
-                        icon: const FaIcon(FontAwesomeIcons.linkedin),
-                        onPressed: onLinkedinPressed,
-                      ),
-                      IconButton(
-                        icon: const FaIcon(FontAwesomeIcons.github),
-                        onPressed: onGithubPressed,
-                      ),
-                      IconButton(
-                        icon: const FaIcon(FontAwesomeIcons.twitter),
-                        onPressed: onTwitterPressed,
-                      ),
-                      const Spacer(),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: IconButton(
+                  icon: const FaIcon(FontAwesomeIcons.github),
+                  onPressed: onGithubPressed,
+                ),
               ),
-            ),
-          );
-        },
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: IconButton(
+                  icon: const FaIcon(FontAwesomeIcons.twitter),
+                  onPressed: onTwitterPressed,
+                ),
+              ),
+              const Spacer(),
+            ],
+          ),
+          Image.asset(
+            "assets/images/harold_augusto1.jpeg",
+            height: 300,
+            width: 300,
+            fit: BoxFit.cover,
+          )
+        ],
       ),
     );
   }
@@ -86,28 +84,5 @@ I enjoy creating innovative solutions using mobile and web technologies. I like 
   void _launchUrl(String url) async {
     Uri uri = Uri.parse(url);
     if (!await launchUrl(uri)) throw 'Could not launch $url';
-  }
-}
-
-class _DefaultText extends StatelessWidget {
-  const _DefaultText({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      textAlign: TextAlign.justify,
-      overflow: TextOverflow.visible,
-      style: const TextStyle(
-        fontWeight: FontWeight.normal,
-        color: Color(0xFF74808a),
-        fontSize: 16,
-      ),
-    );
   }
 }

@@ -8,14 +8,14 @@ import '../about_page.dart';
 import '../projects_page.dart';
 import 'side_menu/side_menu_page.dart';
 
-class HomePageOld extends StatefulWidget {
-  const HomePageOld({Key? key}) : super(key: key);
+class HomePageSideMenu extends StatefulWidget {
+  const HomePageSideMenu({Key? key}) : super(key: key);
 
   @override
-  State<HomePageOld> createState() => _HomePageOldState();
+  State<HomePageSideMenu> createState() => _HomePageSideMenuState();
 }
 
-class _HomePageOldState extends State<HomePageOld> {
+class _HomePageSideMenuState extends State<HomePageSideMenu> {
   final PageController _pageController = PageController();
   int _activePageIndex = 0;
   final int _pageLength = 6;

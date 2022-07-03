@@ -15,7 +15,6 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          //MyNavigationBar(),
           const NavBar(),
           Expanded(child: child),
         ],

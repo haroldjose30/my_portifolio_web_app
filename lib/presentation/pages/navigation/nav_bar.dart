@@ -14,7 +14,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-//add your routes such as Projects.route or "/stories" under routes below
+
   List<Widget> navBarItems = const [
     NavBarItem(
       text: 'About Me',
