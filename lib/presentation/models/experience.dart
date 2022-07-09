@@ -9,7 +9,7 @@ class Experience {
   final String jobFinished;
   final IconData? iconData;
   final String? iconUrl;
-  final List<String> skillsList;
+  final List<Skill> skillsList;
 
   Experience({
     required this.company,
@@ -21,6 +21,16 @@ class Experience {
     required this.skillsList,
     this.iconData,
     this.iconUrl,
+  });
+}
+
+class Skill {
+  final String group;
+  final String name;
+
+  const Skill({
+    required this.group,
+    required this.name,
   });
 }
 
@@ -36,13 +46,20 @@ final List<Experience> dataExperiences = [
     jobFinished: "Present",
     iconData: null,
     iconUrl: "assets/icons/apple.png",
-    skillsList: [
-      "Mobile Technologies: RxSwift,Realm,Swinject,lottie, UiKit Storyboard, Firebase, Testfligth, Cocoa pods, Dependency injection",
-      "Other tools: Miro, Abstract, Jira, bitbucket",
+    skillsList: const [
+      Skill(
+        group: "Mobile Technologies",
+        name:
+            "RxSwift,Realm,Swinject,lottie, UiKit Storyboard, Firebase, Testfligth, Cocoa pods, Dependency injection",
+      ),
+      Skill(
+        group: "Other tools",
+        name: "Miro, Abstract, Jira, bitbucket",
+      )
     ],
   ),
   Experience(
-    company: "Blendit/Electrolux, Curitiba, Brazil",
+    company: "Blendit/Electrolux",
     companyDescription: "IT Consulting Company.",
     jobName: "IOS developer",
     jobDescription:
@@ -51,9 +68,13 @@ final List<Experience> dataExperiences = [
     jobFinished: "Nov 2021",
     iconData: null,
     iconUrl: "assets/icons/apple.png",
-    skillsList: [
-      "Mobile technologies: SwiftUI, Combine, Alamofire, Rest API, Azure Devops Repository,Azure DevOps Boards, Microsoft App Center, Firebase Analytics and crashlytics, App Center to Distribute,Swift Manage Package, Cocoa pods, xCode and Jetbrain AppCode",
-      "Others Tools: Zeplin, OverFlow, AdobeXD",
+    skillsList: const [
+      Skill(
+        group: "Mobile technologies",
+        name:
+            "SwiftUI, Combine, Alamofire, Rest API, Azure Devops Repository,Azure DevOps Boards, Microsoft App Center, Firebase Analytics and crashlytics, App Center to Distribute,Swift Manage Package, Cocoa pods, xCode and Jetbrain AppCode",
+      ),
+      Skill(group: "Others Tools", name: "Zeplin, OverFlow, AdobeXD")
     ],
   ),
   Experience(
@@ -67,10 +88,19 @@ final List<Experience> dataExperiences = [
     jobFinished: "Aug 2020",
     iconData: null,
     iconUrl: "assets/icons/android.png",
-    skillsList: [
-      "Mobile technologies: Android Studio, Java / Kotlin, Video Streaming, Google ExoPlayer, Firebase Remote Config, Push notifications, React Native and TypeScript, BitBucket Pipeline, Fastlane, Firebase Analytics, Firebase Crashlytics.",
-      "Local Database: RealmDb and Room framework to sync with backend.",
-      "Automated Test: Firebase TestLab and Android Expresso UI Test.",
+    skillsList: const [
+      Skill(
+        group: "Mobile technologies",
+        name:
+            "Android Studio, Java / Kotlin, Video Streaming, Google ExoPlayer, Firebase Remote Config, Push notifications, React Native and TypeScript, BitBucket Pipeline, Fastlane, Firebase Analytics, Firebase Crashlytics.",
+      ),
+      Skill(
+          group: "Local Database",
+          name: "RealmDb and Room framework to sync with backend."),
+      Skill(
+        group: "Automated Test",
+        name: "Firebase TestLab and Android Expresso UI Test.",
+      ),
     ],
   ),
   Experience(
@@ -84,12 +114,30 @@ final List<Experience> dataExperiences = [
     jobFinished: "Dec. 2019",
     iconData: null,
     iconUrl: "assets/icons/csharp.png",
-    skillsList: [
-      "Frontend technologies: Asp.net Core MVC/Razor, JavaScript, JQuery",
-      "Backend technologies: Asp.net REST WebApi,Dapper, Design Patterns, DDD-Domain Driven Design, Sql Server for database.",
-      "Automated test technologies: Selenium WebDriver for UI Tests, xUnit for unit test and integration test.",
-      "Management methodology: Kanban,Git flow and github enterprise for source control.",
-      "Other technologies: RFID,PLC/ModBus integration for weighing, loading and unloading trucks and trains without operator intervention."
+    skillsList: const [
+      Skill(
+        group: "Frontend technologies",
+        name: "Asp.net Core MVC/Razor, JavaScript, JQuery",
+      ),
+      Skill(
+        group: "Backend technologies",
+        name:
+            "Asp.net REST WebApi,Dapper, Design Patterns, DDD-Domain Driven Design, Sql Server for database.",
+      ),
+      Skill(
+        group: "Automated test technologies",
+        name:
+            "Selenium WebDriver for UI Tests, xUnit for unit test and integration test.",
+      ),
+      Skill(
+        group: "Management methodology",
+        name: "Kanban,Git flow and github enterprise for source control.",
+      ),
+      Skill(
+        group: "Other technologies",
+        name:
+            "RFID,PLC/ModBus integration for weighing, loading and unloading trucks and trains without operator intervention.",
+      ),
     ],
   ),
   Experience(
@@ -103,12 +151,31 @@ final List<Experience> dataExperiences = [
     jobFinished: "May. 2019",
     iconData: null,
     iconUrl: "assets/icons/cross.png",
-    skillsList: [
-      "As a Tech Leader, I've trained 2 Junior C# developer to start in our Team. Also implemented Source Control Versioning using GitLab in all projects and implement a development process using Kanban to management our tasks.",
-      "As developer, I finished 5 Projects in Xamarin Forms. I started this initiative 2 years ago as a strategy to replace the older applications to Android apps. This allowed the company to acquire new customers in 2018, because the total cost of the project was reduced by up to 60%.",
-      "I Developed 4 Backend project in Aps.net core WebApi to support our mobile apps.",
-      "I finished 8 Project in C# Windows Mobile 6 using WinForms integrated with ERP Totvs/Protheus.",
-      "I Developed 1 Android Native app for appointments of our employees and consultants,called Minerva Mobile, this project is active today, but was converted to Xamarin."
+    skillsList: const [
+      Skill(
+        group: "Tech Leader",
+        name:
+            "As a Tech Leader, I've trained 2 Junior C# developer to start in our Team. Also implemented Source Control Versioning using GitLab in all projects and implement a development process using Kanban to management our tasks.",
+      ),
+      Skill(
+        group: "Mobile",
+        name:
+            "As developer, I finished 5 Projects in Xamarin Forms. I started this initiative 2 years ago as a strategy to replace the older applications to Android apps. This allowed the company to acquire new customers in 2018, because the total cost of the project was reduced by up to 60%.",
+      ),
+      Skill(
+        group: "Backend",
+        name:
+            "I Developed 4 Backend project in Aps.net core WebApi to support our mobile apps.",
+      ),
+      Skill(
+          group: "IOT",
+          name:
+              "I finished 8 Project in C# Windows Mobile 6 using WinForms integrated with ERP Totvs/Protheus."),
+      Skill(
+        group: "Mobile",
+        name:
+            "I Developed 1 Android Native app for appointments of our employees and consultants,called Minerva Mobile, this project is active today, but was converted to Xamarin.",
+      ),
     ],
   ),
   Experience(
@@ -120,11 +187,16 @@ final List<Experience> dataExperiences = [
     jobStarted: "Aug. 2010",
     jobFinished: "May. 2019",
     iconData: Icons.groups,
-    skillsList: [
-      "I managed 8 Project in 7 states in Brazil, and Leading Team for 20 developer and Business Analyst.",
-      "I participated in the PMO-Project Management Office methodology implementation team.",
-      "Was Responsible to make project plans, risks, schedules, performance indicators, meetings for strategic and operational alignment.",
-      "My biggest result was to be able to recover a lost project of \$250 thousand, after a negotiation with the customer, writing the project plan and monitoring the execution of the project for a month.",
+    skillsList: const [
+      Skill(
+        group: "Managment",
+        name: """
+I managed 8 Project in 7 states in Brazil, and Leading Team for 20 developer and Business Analyst.
+I participated in the PMO-Project Management Office methodology implementation team.
+Was Responsible to make project plans, risks, schedules, performance indicators, meetings for strategic and operational alignment.
+My biggest result was to be able to recover a lost project of \$250 thousand, after a negotiation with the customer, writing the project plan and monitoring the execution of the project for a month.
+""",
+      ),
     ],
   ),
 ];

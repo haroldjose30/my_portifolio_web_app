@@ -65,38 +65,32 @@ class ExperienceCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             ListTile(
-              title: Text(experience.company),
+              title: Text(
+                "${experience.jobName} at ${experience.company}",
+              ),
+              isThreeLine: true,
               subtitle: Text(experience.companyDescription),
-            ),
-            ListBody(
-              children: [
-                TextBody(
-                  experience.jobName,
-                  fontSize: 16,
-                ),
-                TextBody(
-                  "${experience.jobStarted} - ${experience.jobFinished}",
-                  fontSize: 10,
-                )
-              ],
+              trailing:
+                  Text("${experience.jobStarted} - ${experience.jobFinished}"),
             ),
             ListBody(
               children: [
                 TextBody(
                   experience.jobDescription,
                   fontSize: 14,
+                  padding: const EdgeInsets.only(left: 16, right: 16),
                 )
               ],
             ),
+            const SizedBox(height: 16),
             for (var skill in experience.skillsList)
               ListBody(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextBody(
-                      skill,
-                      fontSize: 12,
-                    ),
+                  TextBody(
+                    "${skill.group}: ${skill.name}",
+                    fontSize: 14,
+                    padding:
+                        const EdgeInsets.only(left: 32, bottom: 8, right: 16),
                   )
                 ],
               ),
