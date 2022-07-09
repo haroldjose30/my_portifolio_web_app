@@ -22,7 +22,7 @@ class RouteGenerator {
       case routeSkills:
         return MaterialPageRoute(builder: (_) => const SkillsPage());
       case routeExperience:
-        return MaterialPageRoute(builder: (_) => const ExperiencePage());
+        return MaterialPageRoute(builder: (_) => ExperiencePage());
       case routeEducation:
         return MaterialPageRoute(builder: (_) => const EducationPage());
       default:

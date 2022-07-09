@@ -16,15 +16,15 @@ class HomePageSideMenu extends StatefulWidget {
 }
 
 class _HomePageSideMenuState extends State<HomePageSideMenu> {
-  final PageController _pageController = PageController();
-  int _activePageIndex = 0;
+  final PageController _pageController = PageController(initialPage: 3);
+  int _activePageIndex = 5;
   final int _pageLength = 6;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Harold Professional Profile"),
+        title: const Text("Harold Professional Profile"),
         centerTitle: true,
       ),
       body: Row(
@@ -52,7 +52,7 @@ class _HomePageSideMenuState extends State<HomePageSideMenu> {
       case 2:
         return const SkillsPage();
       case 3:
-        return const ExperiencePage();
+        return ExperiencePage();
       case 4:
         return const EducationPage();
       case 5:
