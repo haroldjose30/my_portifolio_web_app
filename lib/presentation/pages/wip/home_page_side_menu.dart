@@ -16,7 +16,7 @@ class HomePageSideMenu extends StatefulWidget {
 }
 
 class _HomePageSideMenuState extends State<HomePageSideMenu> {
-  final PageController _pageController = PageController(initialPage: 4);
+  final PageController _pageController = PageController(initialPage: 3);
   int _activePageIndex = 5;
   final int _pageLength = 6;
 
@@ -52,7 +52,7 @@ class _HomePageSideMenuState extends State<HomePageSideMenu> {
       case 2:
         return const SkillsPage();
       case 3:
-        return const ExperiencePage();
+        return ExperiencePage();
       case 4:
         return const EducationPage();
       case 5:

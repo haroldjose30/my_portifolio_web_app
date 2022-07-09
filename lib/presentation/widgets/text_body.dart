@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class TextBody extends StatelessWidget {
   final String text;
   final FontWeight? fontWeight;
+  final double? fontSize;
 
   const TextBody(
     this.text, {
     this.fontWeight = FontWeight.normal,
+    this.fontSize = 16,
     Key? key,
   }) : super(key: key);
 
@@ -22,7 +24,7 @@ class TextBody extends StatelessWidget {
         style: TextStyle(
           fontWeight: fontWeight,
           color: const Color(0xFF74808a),
-          fontSize: 16,
+          fontSize: fontSize,
         ),
       ),
     );
