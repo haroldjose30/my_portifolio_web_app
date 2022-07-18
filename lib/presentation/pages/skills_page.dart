@@ -15,8 +15,8 @@ class SkillsPage extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const TextSectionTitle("Selected Skills"),
-          const TextBody("10+ years"),
+          const TextSectionTitle("My Skills"),
+          const TextBody("10+ years", fontSize: 18),
           Container(
             constraints: const BoxConstraints(maxWidth: 800),
             child: Wrap(
@@ -26,7 +26,8 @@ class SkillsPage extends StatelessWidget {
               ],
             ),
           ),
-          const TextBody("5+ years"),
+          const SizedBox(height: 20),
+          const TextBody("5+ years", fontSize: 18),
           Container(
             constraints: const BoxConstraints(maxWidth: 800),
             child: Wrap(
@@ -39,7 +40,8 @@ class SkillsPage extends StatelessWidget {
               ],
             ),
           ),
-          const TextBody("3+ years"),
+          const SizedBox(height: 20),
+          const TextBody("3+ years", fontSize: 18),
           Container(
             constraints: const BoxConstraints(maxWidth: 800),
             child: Wrap(
@@ -53,7 +55,8 @@ class SkillsPage extends StatelessWidget {
               ],
             ),
           ),
-          const TextBody("less than 1 year:"),
+          const SizedBox(height: 20),
+          const TextBody("less than 1 year:", fontSize: 18),
           Container(
             constraints: const BoxConstraints(maxWidth: 800),
             child: Wrap(
@@ -62,7 +65,8 @@ class SkillsPage extends StatelessWidget {
               ],
             ),
           ),
-          const TextBody("In Studie"),
+          const SizedBox(height: 20),
+          const TextBody("In Studie:", fontSize: 18),
           Container(
             constraints: const BoxConstraints(maxWidth: 800),
             child: Wrap(

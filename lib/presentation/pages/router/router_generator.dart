@@ -4,8 +4,8 @@ import 'routes.dart';
 import '../about_page.dart';
 import '../contact_page.dart';
 import '../education_page.dart';
-import '../experience_page.dart';
-import '../projects_page.dart';
+import '../experience/experience_page.dart';
+import '../projects/projects_page.dart';
 import '../skills_page.dart';
 
 class RouteGenerator {
@@ -18,7 +18,7 @@ class RouteGenerator {
       case routeContact:
         return MaterialPageRoute(builder: (_) => const ContactPage());
       case routeProjects:
-        return MaterialPageRoute(builder: (_) => const ProjectsPage());
+        return MaterialPageRoute(builder: (_) => ProjectsPage());
       case routeSkills:
         return MaterialPageRoute(builder: (_) => const SkillsPage());
       case routeExperience:

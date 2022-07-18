@@ -65,6 +65,16 @@ flutter:
      - assets/
      - assets/icons/
      - assets/images/
+     - assets/images/projects/
+     - assets/images/projects/meusucesso/
+     - assets/images/projects/minervamobile/
+     - assets/images/projects/minervamobile/logo/
+     - assets/images/projects/numberone/
+     - assets/images/projects/rds/
+     - assets/images/projects/rds/logo/
+     - assets/images/projects/trail/
+     - assets/images/projects/trail/logo/
+     - assets/images/projects/wiseupplus/
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../router/routes.dart';
+import '../../../pages/router/routes.dart';
 
 class NavBarItem extends StatefulWidget {
   final String text;

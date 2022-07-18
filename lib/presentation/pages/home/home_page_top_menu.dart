@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'navigation/nav_bar.dart';
+import '../../widgets/menu/nav_bar/nav_bar.dart';
 
-class HomePage extends StatelessWidget {
+class HomePageTopMenu extends StatelessWidget {
   final Widget child;
-  const HomePage({
+  const HomePageTopMenu({
     required this.child,
     Key? key,
   }) : super(key: key);

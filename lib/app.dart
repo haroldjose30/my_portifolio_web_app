@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'presentation/pages/home_page.dart';
+import 'presentation/pages/home/home_page_top_menu.dart';
 import 'presentation/pages/router/router_generator.dart';
 import 'presentation/pages/router/routes.dart';
-import 'presentation/pages/wip/home_page_side_menu.dart';
+import 'presentation/pages/home/home_page_side_menu.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);

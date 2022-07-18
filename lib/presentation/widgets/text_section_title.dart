@@ -16,7 +16,7 @@ class TextSectionTitle extends StatelessWidget {
           textAlign: TextAlign.center,
           overflow: TextOverflow.visible,
           style: const TextStyle(
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.normal,
             color: Colors.black,
             fontSize: 24,
           ),

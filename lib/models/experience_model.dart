@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Experience {
+class ExperienceModel {
   final String company;
   final String companyDescription;
   final String jobName;
@@ -9,9 +9,9 @@ class Experience {
   final String jobFinished;
   final IconData? iconData;
   final String? iconUrl;
-  final List<Skill> skillsList;
+  final List<SkillModel> skillsList;
 
-  Experience({
+  ExperienceModel({
     required this.company,
     required this.companyDescription,
     required this.jobName,
@@ -24,19 +24,19 @@ class Experience {
   });
 }
 
-class Skill {
+class SkillModel {
   final String group;
   final String name;
 
-  const Skill({
+  const SkillModel({
     required this.group,
     required this.name,
   });
 }
 
 //TODO:_move to repository pattern
-final List<Experience> dataExperiences = [
-  Experience(
+final List<ExperienceModel> dataExperienceModels = [
+  ExperienceModel(
     company: "Olisipo/Bosch",
     companyDescription: "IT Services and IT Consulting.",
     jobName: "IOS developer",
@@ -47,18 +47,18 @@ final List<Experience> dataExperiences = [
     iconData: null,
     iconUrl: "assets/icons/apple.png",
     skillsList: const [
-      Skill(
+      SkillModel(
         group: "Mobile Technologies",
         name:
-            "RxSwift,Realm,Swinject,lottie, UiKit Storyboard, Firebase, Testfligth, Cocoa pods, Dependency injection",
+            "RxSwift, Realm, Swinject, lottie, UiKit Storyboard, Firebase, Testfligth, Cocoa pods, Dependency injection",
       ),
-      Skill(
+      SkillModel(
         group: "Other tools",
         name: "Miro, Abstract, Jira, bitbucket",
       )
     ],
   ),
-  Experience(
+  ExperienceModel(
     company: "Blendit/Electrolux",
     companyDescription: "IT Consulting Company.",
     jobName: "IOS developer",
@@ -69,15 +69,15 @@ final List<Experience> dataExperiences = [
     iconData: null,
     iconUrl: "assets/icons/apple.png",
     skillsList: const [
-      Skill(
+      SkillModel(
         group: "Mobile technologies",
         name:
-            "SwiftUI, Combine, Alamofire, Rest API, Azure Devops Repository,Azure DevOps Boards, Microsoft App Center, Firebase Analytics and crashlytics, App Center to Distribute,Swift Manage Package, Cocoa pods, xCode and Jetbrain AppCode",
+            "SwiftUI, Combine, Alamofire, Rest API, Azure Devops Repository, Azure DevOps Boards, Microsoft App Center, Firebase Analytics and crashlytics, App Center to Distribute, Swift Manage Package, Cocoa pods, xCode and Jetbrain AppCode",
       ),
-      Skill(group: "Others Tools", name: "Zeplin, OverFlow, AdobeXD")
+      SkillModel(group: "Others Tools", name: "Zeplin, OverFlow, AdobeXD")
     ],
   ),
-  Experience(
+  ExperienceModel(
     company: "Samcorp Solution",
     companyDescription:
         "A Software development company to customers in Brazil and Argentina.",
@@ -89,21 +89,21 @@ final List<Experience> dataExperiences = [
     iconData: null,
     iconUrl: "assets/icons/android.png",
     skillsList: const [
-      Skill(
+      SkillModel(
         group: "Mobile technologies",
         name:
             "Android Studio, Java / Kotlin, Video Streaming, Google ExoPlayer, Firebase Remote Config, Push notifications, React Native and TypeScript, BitBucket Pipeline, Fastlane, Firebase Analytics, Firebase Crashlytics.",
       ),
-      Skill(
+      SkillModel(
           group: "Local Database",
           name: "RealmDb and Room framework to sync with backend."),
-      Skill(
+      SkillModel(
         group: "Automated Test",
         name: "Firebase TestLab and Android Expresso UI Test.",
       ),
     ],
   ),
-  Experience(
+  ExperienceModel(
     company: "Samcorp Solution",
     companyDescription:
         "A Software development company to customers in Brazil and Argentina.",
@@ -115,32 +115,32 @@ final List<Experience> dataExperiences = [
     iconData: null,
     iconUrl: "assets/icons/csharp.png",
     skillsList: const [
-      Skill(
+      SkillModel(
         group: "Frontend technologies",
         name: "Asp.net Core MVC/Razor, JavaScript, JQuery",
       ),
-      Skill(
+      SkillModel(
         group: "Backend technologies",
         name:
             "Asp.net REST WebApi,Dapper, Design Patterns, DDD-Domain Driven Design, Sql Server for database.",
       ),
-      Skill(
+      SkillModel(
         group: "Automated test technologies",
         name:
             "Selenium WebDriver for UI Tests, xUnit for unit test and integration test.",
       ),
-      Skill(
+      SkillModel(
         group: "Management methodology",
         name: "Kanban,Git flow and github enterprise for source control.",
       ),
-      Skill(
+      SkillModel(
         group: "Other technologies",
         name:
             "RFID,PLC/ModBus integration for weighing, loading and unloading trucks and trains without operator intervention.",
       ),
     ],
   ),
-  Experience(
+  ExperienceModel(
     company: "Rsac Solutions",
     companyDescription:
         "Consulting Company for ERP(Enterprise Resource Planning System) Totvs/Protheus (the biggest Brazilian ERP) helping the client to implement, customize, and integrate Web/Mobile solutions",
@@ -152,33 +152,33 @@ final List<Experience> dataExperiences = [
     iconData: null,
     iconUrl: "assets/icons/cross.png",
     skillsList: const [
-      Skill(
+      SkillModel(
         group: "Tech Leader",
         name:
             "As a Tech Leader, I've trained 2 Junior C# developer to start in our Team. Also implemented Source Control Versioning using GitLab in all projects and implement a development process using Kanban to management our tasks.",
       ),
-      Skill(
+      SkillModel(
         group: "Mobile",
         name:
             "As developer, I finished 5 Projects in Xamarin Forms. I started this initiative 2 years ago as a strategy to replace the older applications to Android apps. This allowed the company to acquire new customers in 2018, because the total cost of the project was reduced by up to 60%.",
       ),
-      Skill(
+      SkillModel(
         group: "Backend",
         name:
             "I Developed 4 Backend project in Aps.net core WebApi to support our mobile apps.",
       ),
-      Skill(
+      SkillModel(
           group: "IOT",
           name:
               "I finished 8 Project in C# Windows Mobile 6 using WinForms integrated with ERP Totvs/Protheus."),
-      Skill(
+      SkillModel(
         group: "Mobile",
         name:
             "I Developed 1 Android Native app for appointments of our employees and consultants,called Minerva Mobile, this project is active today, but was converted to Xamarin.",
       ),
     ],
   ),
-  Experience(
+  ExperienceModel(
     company: "Ábaco IT",
     companyDescription: "Software Developer company to Government",
     jobName: "Project Manager",
@@ -188,7 +188,7 @@ final List<Experience> dataExperiences = [
     jobFinished: "May. 2019",
     iconData: Icons.groups,
     skillsList: const [
-      Skill(
+      SkillModel(
         group: "Managment",
         name: """
 I managed 8 Project in 7 states in Brazil, and Leading Team for 20 developer and Business Analyst.
